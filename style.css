@@ -10,6 +10,7 @@
     --text-color: hsl(220, 13%, 13%);
     --text-color-light: hsl(219, 9%, 45%);
     --background-color: hsl(223, 64%, 98%);
+    --white-color: hsl(0, 0%, 100%);
 }
 
 body {
@@ -19,6 +20,16 @@ body {
     font-weight: 400;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
 
 .logo img {
     width: 150px;
@@ -30,7 +41,6 @@ header {
     justify-content: space-between;
     align-items: center;
     margin: 1rem 10rem;
-    /* border-bottom: 1px solid hsl(223, 64%, 98%); */
     border-bottom: 1px solid hsl(220, 14%, 75%);
     padding-bottom: 1rem;
 }
@@ -39,21 +49,62 @@ header {
     display: flex;
     list-style: none;
     gap: 1rem;
-    background-color: var(--primary-color);
 }
 
-.navbar ul li a {
-    text-decoration: none;
-    color: hsl(220, 13%, 13%);
+.navbar a:hover {
+    color: var(--text-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 1.6rem;
+}
+
+.navbar a {
+    color: var(--text-color-light);
 }
 
 .profile {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    background-color: var(--primary-color);
+    gap: 1.25rem;
 }
 
 .profile-img {
-    width: 40px;
+    border: 2px solid transparent;
+}
+
+.profile-img:hover {
+    cursor: pointer;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    
+}
+
+.cart-icon:hover {
+    cursor: pointer;
+}
+
+.cart {
+    position: absolute;
+    z-index: 100;
+    width: clamp(300px, 20vw, 400px);
+    height: 200px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--white-color);
+    right: 20px;
+    top: 4.5rem;
+    padding: 1rem;
+    /* inset: 0; */
+}
+
+.title {
+    border-bottom: 1px solid hsl(220, 14%, 75%);
+    padding-bottom: 1rem;
+}
+
+.empty-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: var(--text-color-light);
 }
